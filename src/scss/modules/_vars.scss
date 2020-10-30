@@ -1,0 +1,15 @@
+@mixin text($f : 'TR', $s : 16px ) {
+  font-family: $f, Arial, Helvetica, sans-serif;
+  font-size: $s;
+}
+
+@mixin flexbox($f : flex, $j : flex-start, $a : flex-start, $d : row) {
+  display: $f;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+@mixin transition($s : .2s, $t : ease-in-out ) {
+  transition: $s $t;
+}

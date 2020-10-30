@@ -1,0 +1,74 @@
+$colors : 'grey' $grey, 
+          'black' $black, 
+          'graphite' $graphite, 
+          'blue' $blue, 
+          'white' $white; 
+          
+$positioning: left, right, center, justify;
+
+.text {
+  margin: 0;
+
+  &--link {
+    text-decoration: none;
+  }
+
+  &--reg {
+    @include text('TR');
+  }
+
+  &--header {
+    @include text('TB');
+  }
+}
+
+@each $color in $colors {
+  .text--#{nth($color, 1)} {
+    color: nth($color, 2);
+  }
+}
+
+@each $pos in $positioning {
+  .text--#{$pos} {
+    text-align: $pos;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  cursor: pointer;
+  @include transition;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  // &--fav {
+  //   background: url('../../img/star.svg') no-repeat center / contain;
+  // }
+
+  &--blue {
+    background-color: $blue;
+    color: $white;
+    border: none;
+    @include text('TB', 18px);
+    opacity: .85;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  &--load-more {
+    height: 56px;
+    width: 286px;
+    display: block;
+    margin: 30px auto;
+  }
+}
