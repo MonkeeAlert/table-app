@@ -54,7 +54,8 @@ export const l18n = [
       byNotDone : 'По несделанным',
       asc       : 'По возрастанию',
       desc      : 'По убыванию',
-      loadMore  : 'Показать ещё'
+      loadMore  : 'Показать ещё',
+      empty     : 'Данные отсутствуют'
     }
   },
   { 
@@ -74,7 +75,8 @@ export const l18n = [
       byDone    : 'By done',
       byNotDone : 'By not done',
       desc      : 'Descending',
-      loadMore  : 'Load more'
+      loadMore  : 'Load more',
+      empty     : 'No data'
     }
   }
 ];

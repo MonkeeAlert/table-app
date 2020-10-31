@@ -3,6 +3,17 @@
     &__header {
       margin-bottom: 20px;
     }
+
+    &__empty {
+      &-image {
+        width: 150px;
+        height: 150px;
+      }
+      
+      &-text {
+        font-size: 21px; 
+      }
+    }
   }
 
   .header {
@@ -108,7 +119,18 @@
     &__header {
       margin-bottom: 3vw;
     }
+    &__empty {
+      &-image {
+        width: 20vw;
+        height: 20vw;
+      }
+      
+      &-text {
+        font-size: 3vw; 
+      }
+    }
   }
+
   .header {
     &__text {
       &--logo {

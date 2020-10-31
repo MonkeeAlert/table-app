@@ -15,8 +15,6 @@ export const Table = connect(mapStateToProps)(
 
     const data = sortBy(current, filterBy, orderBy);
 
-    // empty view
-    // if(!data.length) console.log('foo', data.length);
     return(
       <ul className={`list table${ view === 'grid' ? '--grid' : ''}`}>
         {

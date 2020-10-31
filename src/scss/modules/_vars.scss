@@ -13,3 +13,9 @@
 @mixin transition($s : .2s, $t : ease-in-out ) {
   transition: $s $t;
 }
+
+@mixin transform($k, $v) {
+  transform: $k + '(' + $v + ')';
+  -webkit-transform: $k + '(' + $v + ')';
+  -ms-transform: $k + '(' + $v + ')';
+}
