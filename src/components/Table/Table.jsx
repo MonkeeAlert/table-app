@@ -10,12 +10,13 @@ const mapStateToProps = state => (
 );
 
 export const Table = connect(mapStateToProps)(
-  ({ store, dispatch }) => {
+  ({ store }) => {
     const { view, language, current, filterBy, orderBy } = store.getState();
 
     const data = sortBy(current, filterBy, orderBy);
 
-    if(!data.length) console.log('foo', data.length);
+    // empty view
+    // if(!data.length) console.log('foo', data.length);
     return(
       <ul className={`list table${ view === 'grid' ? '--grid' : ''}`}>
         {

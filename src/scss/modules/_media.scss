@@ -1,0 +1,198 @@
+@media (max-width: 1280px) {
+  .app {
+    &__header {
+      margin-bottom: 20px;
+    }
+  }
+
+  .header {
+    &__text {
+      &--logo {
+        font-size: 21px
+      }
+    }
+
+    &__filter {
+      &-list-item {
+        font-size: 14px;
+      }
+    }
+
+    &__language {
+      height: 36px;
+      font-size: 14px;
+    }
+
+    &__row {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .table {
+    &__text {
+      &--small {
+        font-size: 14px;
+      }
+
+      &--large {
+        font-size: 16px;
+      }
+    }
+
+    &__block {
+      &--id {
+        padding-right: 20px;
+        max-width: 100px;
+      }
+    }
+  }
+
+  .button {
+    font-size: 14px;
+    width: 225px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 1117px) {
+  .app {
+    padding: 25px;
+  }
+
+  .header {
+    &__filter {
+      &-list-title {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+// @media (max-width: 907px) {
+
+// }
+
+@media (max-width: 790px) {
+  .table {
+    &--grid {
+      @include flexbox($j : space-between, $a : flex-start);
+      flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+
+      .table__row {
+        width: calc(50% - 5px);
+        &:nth-child(1),
+        &:nth-child(3n + 1) {
+          margin-left: unset;
+          margin-right: unset;
+        }
+  
+        &:nth-child(3n + 2) {
+          margin-left: unset;
+          margin-right: unset; 
+        }
+  
+        &:nth-child(3n) {
+          margin-left: unset;
+          margin-right: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .app {
+    &__header {
+      margin-bottom: 3vw;
+    }
+  }
+  .header {
+    &__text {
+      &--logo {
+        font-size: 3vw;
+      }
+    }
+
+    &__language {
+      height: 5vw;
+      font-size: 2.15vw;
+      min-width: auto;
+      width: 25vw;
+    }
+
+    &__filter {
+      margin-right: 2vw;
+      &-list {
+        &-title {
+          font-size: 2vw;
+          padding: 1.5vw 2vw
+        }
+
+        &:not(:first-child) {
+          margin-left: 2vw;
+        }
+      }
+
+      &-icon {
+        width: 2vw;
+        height: 2vw;
+      }
+    }
+
+    &__row {
+      &:not(:last-child) {
+        margin-bottom: 3vw;
+      }
+    }
+  }
+
+  .table {
+    &__row {
+      padding: 1.5vw 3vw;
+    }
+    
+    &__text {
+      &--small {
+        font-size: 2vw;
+      }
+      &--large {
+        font-size: 2.3vw;
+        line-height: 4vw;
+      }
+    }
+
+    &__block {
+      line-height: 4vw;
+
+      &--id {
+        max-width: 13vw;
+      }
+    }
+
+    &--grid {
+      .table {
+        &__row {
+          width: 100%;
+          padding: 4vw 3vw;
+        }
+
+        &__block {
+          &--id {
+            right: 3vw;
+            top: 4vw;
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    font-size: 2vw;
+    width: 100%;
+    height: 7vw;
+    margin: 3vw 0;
+  }
+}

@@ -44,7 +44,15 @@
   }
 
   &__filter {
+    margin-right: 15px;
     @include flexbox($a : center);
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+      @include transition;
+    }
 
     &-list {
       @include flexbox($a : center);
@@ -85,6 +93,10 @@
     &-input:checked + &-list-title {
       background-color: $blue;
       color: $white;
+    }
+
+    &-input:checked + &-list-title &-icon {
+      filter: invert(1);
     }
   }
 }
@@ -146,7 +158,6 @@
       opacity: 1;
     }
   }
-
 
   &--grid {
     display: grid;

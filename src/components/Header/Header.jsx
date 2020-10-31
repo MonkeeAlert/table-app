@@ -16,7 +16,7 @@ const Header = _ => {
         <Logo store={store} />
         <LanguageSelect dispatch={dispatch} />
       </div>
-      <div className="header__row">
+      <div className="header__row header__row--filters">
         <Filters store={store} dispatch={dispatch} />
         <View store={store} dispatch={dispatch} />
       </div>

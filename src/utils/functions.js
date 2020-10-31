@@ -1,6 +1,40 @@
+import Table from '../svg/table.svg';
+import Grid from '../svg/grid.svg';
+import Asc from '../svg/ascending.svg';
+import Desc from '../svg/descending.svg';
+import Done from '../svg/done.svg';
+import NotDone from '../svg/not-done.svg';
+
 export const filters = [ 'id', 'userId', 'title', 'completed' ];
-export const order = [ 'asc', 'desc' ];
-export const layouts = [ 'table', 'grid' ];
+export const order = [ 
+  {
+    key: 'asc',
+    icon: Asc,
+    status: {
+      key  : 'Done',
+      icon : Done 
+    }
+  }, 
+  {
+    key: 'desc',
+    icon: Desc,
+    status: {
+      key  : 'NotDone',
+      icon : NotDone 
+    }
+  } 
+];
+
+export const layouts = [ 
+  { 
+    key : 'table', 
+    icon : Table
+  }, 
+  { 
+    key : 'grid',
+    icon : Grid
+  } 
+];
 
 export const l18n = [
   { 
@@ -45,6 +79,11 @@ export const l18n = [
   }
 ];
 
+export const screens = {
+  tablet: 1117,
+  // mobile: 790
+}
+ 
 const compareStrings = ( toCompareA, toCompareB ) => {
   return toCompareA.slice(0, toCompareA.indexOf(' ')).localeCompare(toCompareB);
 }
@@ -72,4 +111,8 @@ export function getTranslation( lang, str ) {
 
   if(!res) throw new Error('ERROR: String is undefined');
   return res;
+}
+
+export function getWindowSize() {
+  return { w: window.innerWidth, h: window.innerHeight}
 }
