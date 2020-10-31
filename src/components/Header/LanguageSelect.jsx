@@ -14,9 +14,11 @@ export const LanguageSelect = ({ dispatch }) => {
       id="language" 
       className="header__language"
     >
-      { l18n.map( l => (
-        <option key={l.key} value={l.key} className="header__language-option">{l.lang}</option>
-      )) }
+      { 
+        l18n.map( l => (
+          <option key={l.key} value={l.key} className="header__language-option">{l.lang}</option>
+        )) 
+      }
     </select>
   )
 }

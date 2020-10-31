@@ -7,8 +7,7 @@ const mapStateToProps = state => ({ data: [ ...state.data ], current: [ ...state
 
 export const LoadMore = connect(mapStateToProps)(
   ({ store, dispatch, initialStep }) => {
-    const data = store.getState().data;
-    const current = store.getState().current;
+    const { data, current, language } = store.getState();
 
     const step = data.length - current.length <= initialStep ? data.length - current.length : initialStep;
 
@@ -16,7 +15,7 @@ export const LoadMore = connect(mapStateToProps)(
       const currentIds = current.map( c => c.id);
 
       const arr = data.filter( d => !currentIds.includes(d.id) ).filter( (_, k) => k < initialStep);
-      dispatch( updateCurrent([...store.getState().current, ...arr]) );
+      dispatch( updateCurrent([...current, ...arr]) );
     }
   
     if( step <= 0) return null;
@@ -26,7 +25,7 @@ export const LoadMore = connect(mapStateToProps)(
         className="button button--blue button--load-more"
         onClick={ loadMore }
       >
-        { `${ getTranslation( store.getState().language, 'loadMore' ) } ${step}` }
+        { `${ getTranslation( language, 'loadMore' ) } ${step}` }
       </button>
     )
   }

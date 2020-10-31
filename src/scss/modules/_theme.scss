@@ -108,13 +108,14 @@
     &--id {
       padding-right: 20px;
       max-width: 150px;
+      box-sizing: border-box;
     }
 
-    &--name {
-      max-width: 30%;
+    &--title {
+      max-width: 80%;
     }
 
-    &--phone {
+    &--status {
       max-width: 15%;
     }
   }
@@ -183,40 +184,41 @@
         width: 100%;
         // max-width: 100%;
 
-        &--id,
-        &--phone,
-        &--address {
+        &--id {
           position: absolute;
           max-width: unset;
           width: auto;
-        }
-
-        &--id {
           right: 20px;
           top: 15px;
           padding: 0;
         }
 
-        &--phone {
-          right: 20px;
-          bottom: 15px;
-        }
-
-        &--name {
+        &--title {
           max-width: 100%;
-        }
-
-        &--company {
-          max-width: 100%;
-          margin: 30px 0 100px;
-        }
-
-        &--address {
-          left: 20px;
-          bottom: 15px;
-          padding-right: 20px;
-          width: calc(100% - 170px);
+          padding-right: 25%;
           box-sizing: border-box;
+        }
+
+        &--status {
+          position: absolute;
+          max-width: 100%;
+          text-align: center;
+          left: 0;
+          bottom: 0;
+          padding: 15px 0;
+
+          &-red {
+            background-color: $red
+          }
+
+          &-green {
+            background-color: $green
+          }
+
+          .text {
+            color: $white;
+            font-family: 'TB', Arial, Helvetica, sans-serif;
+          }
         }
       }
     }

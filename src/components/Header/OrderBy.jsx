@@ -7,23 +7,35 @@ const mapStateToProps = state => ({ ...state, orderBy: state.orderBy });
 
 export const OrderBy = connect(mapStateToProps)(
   ({ store, dispatch }) => {
+    const { language, orderBy, filterBy } = store.getState();
+
     return(
       <ul className="list header__filter-list">
         {
-          order.map( (o, k) => (
-            <li key={k} className="header__filter-list-item">
+          order.map( (o, k) => {
+            const isFalsy = k % 2 !== 0;
+
+            return(
+              <li key={k} className="header__filter-list-item">
               <input 
                 type="radio" 
                 name="order_by" 
-                checked={ store.getState().orderBy === o ? true : false}
+                checked={ orderBy === o ? true : false}
                 onChange={ _ => dispatch( setOrder(o) ) }
                 className="header__filter-input"
               />
               <span className="header__filter-list-title">
-                { getTranslation( store.getState().language, o) }
+                { 
+                  getTranslation( 
+                    language, 
+                    filterBy !== 'completed' ? 
+                      o : isFalsy ? 'byDone' : 'byNotDone' 
+                  ) 
+                }
               </span>
             </li>
-          ))
+            )
+          })
         }
       </ul>
     )

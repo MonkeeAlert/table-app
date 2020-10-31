@@ -11,7 +11,7 @@ export const Logo = connect(mapStateToProps)(
       rel="noopener noreferrer" 
       className="text--link text--header text--graphite header__text--logo"
     >
-      { getTranslation( store.getState().language, 'logo' )}
+      { getTranslation( store.getState().language, 'logo' ) }
     </a> 
   )
 )

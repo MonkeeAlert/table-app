@@ -7,6 +7,8 @@ const mapStateToProps = state => ({ ...state, filterBy: state.filterBy });
 
 export const FilterBy = connect(mapStateToProps)(
   ({ store, dispatch }) => {
+    const { language, filterBy } = store.getState();
+
     const handleChange = criteria => dispatch( setFilter( criteria ) );
   
     return(
@@ -17,12 +19,12 @@ export const FilterBy = connect(mapStateToProps)(
               <input 
                 type="radio" 
                 name="filter_by" 
-                checked={ store.getState().filterBy === f ? true : false} 
+                checked={ filterBy === f ? true : false} 
                 className="header__filter-input"
                 onChange={ _ => handleChange(f) }
               />
               <span className="header__filter-list-title">
-                { getTranslation( store.getState().language, f ) }
+                { getTranslation( language, f ) }
               </span>
             </li>
           ))

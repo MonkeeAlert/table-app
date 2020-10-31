@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { setView } from '../../redux/actions';
 import { layouts, getTranslation } from '../../utils/functions'
 
-const mapStateToProps = state => ({ ...state, view : state.view, language : state.language });
+const mapStateToProps = state => ({ view : state.view, language : state.language });
 
 export const View = connect(mapStateToProps)( 
   ({ store, dispatch }) => {
+    const { view, language } = store.getState();
+
     return(
       <section className="header__view">
         <ul className="list header__filter-list">
@@ -17,11 +19,11 @@ export const View = connect(mapStateToProps)(
                   type="radio" 
                   name="view" 
                   className="header__filter-input"
-                  checked={ store.getState().view === l ? true : false }
+                  checked={ view === l ? true : false }
                   onChange={ _ => dispatch( setView(l) )}
                 />
                 <span className="header__filter-list-title">
-                  { getTranslation( store.getState().language, l ) }
+                  { getTranslation( language, l ) }
                 </span>
               </li>
             ))
