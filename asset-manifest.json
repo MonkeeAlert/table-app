@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/table-app/static/css/main.06c42404.chunk.css",
+    "main.js": "/table-app/static/js/main.4427216f.chunk.js",
+    "main.js.map": "/table-app/static/js/main.4427216f.chunk.js.map",
+    "runtime-main.js": "/table-app/static/js/runtime-main.7d3c62d7.js",
+    "runtime-main.js.map": "/table-app/static/js/runtime-main.7d3c62d7.js.map",
+    "static/js/2.a56fd4a8.chunk.js": "/table-app/static/js/2.a56fd4a8.chunk.js",
+    "static/js/2.a56fd4a8.chunk.js.map": "/table-app/static/js/2.a56fd4a8.chunk.js.map",
+    "index.html": "/table-app/index.html",
+    "precache-manifest.85c4f060d501b128d030193e3c8d3e20.js": "/table-app/precache-manifest.85c4f060d501b128d030193e3c8d3e20.js",
+    "service-worker.js": "/table-app/service-worker.js",
+    "static/css/main.06c42404.chunk.css.map": "/table-app/static/css/main.06c42404.chunk.css.map",
+    "static/js/2.a56fd4a8.chunk.js.LICENSE.txt": "/table-app/static/js/2.a56fd4a8.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/table-app/static/media/TrebuchetMS.f2bb6f22.woff",
+    "static/media/ascending.svg": "/table-app/static/media/ascending.2e617e17.svg",
+    "static/media/descending.svg": "/table-app/static/media/descending.9abd6ee1.svg",
+    "static/media/done.svg": "/table-app/static/media/done.0fb99c76.svg",
+    "static/media/forbidden.svg": "/table-app/static/media/forbidden.d064fad2.svg",
+    "static/media/grid.svg": "/table-app/static/media/grid.956b42da.svg",
+    "static/media/not-done.svg": "/table-app/static/media/not-done.aeec2863.svg",
+    "static/media/table.svg": "/table-app/static/media/table.3274f879.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d3c62d7.js",
+    "static/js/2.a56fd4a8.chunk.js",
+    "static/css/main.06c42404.chunk.css",
+    "static/js/main.4427216f.chunk.js"
+  ]
+}
