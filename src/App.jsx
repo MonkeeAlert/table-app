@@ -2,7 +2,6 @@ import React from 'react';
 import { useStore, useDispatch } from 'react-redux';
 import { Table } from './components/Table/Table';
 import { LoadMore } from './components/Table/LoadMore';
-import { Empty } from './components/Empty/Empty';
 import { getData, updateCurrent } from './redux/actions';
 import { sortBy } from './utils/functions';
 
@@ -18,10 +17,9 @@ const App = _ => {
 
   const { filterBy, orderBy } = store.getState();
 
-  fetch('https://jsonplaceholder.typicode.com/to2dos')
+  fetch('https://jsonplaceholder.typicode.com/todos')
     .then( response => response.json() )
     .then( data => {
-      // console.log(data);
       const d = Object.values(data).length > 0 ? sortBy(data, filterBy, orderBy) : [] ;
       dispatch( getData(d) );
     } )
@@ -32,20 +30,13 @@ const App = _ => {
         const slice = data.slice(0, 5);
         dispatch( updateCurrent( slice ) );
       }
-    } );
+    } 
+  );
 
   return (
     <main className="app__main">
-      {
-        store.getState().data.length > 0 ? (
-          <>
-            <Table store={store} dispatch={dispatch} />
-            <LoadMore store={store} dispatch={dispatch} initialStep={10} />
-          </>
-        ) : (
-          <Empty store={store} />
-        )
-      }
+      <Table store={store} dispatch={dispatch} />
+      <LoadMore store={store} dispatch={dispatch} initialStep={10} />
     </main>
   );
 }

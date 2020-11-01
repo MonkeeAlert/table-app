@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Empty } from '../Empty/Empty';
 import { sortBy, getTranslation } from '../../utils/functions';
 
 const mapStateToProps = state => (
@@ -15,6 +16,7 @@ export const Table = connect(mapStateToProps)(
 
     const data = sortBy(current, filterBy, orderBy);
 
+    if(data.length === 0) return <Empty store={store} />
     return(
       <ul className={`list table${ view === 'grid' ? '--grid' : ''}`}>
         {

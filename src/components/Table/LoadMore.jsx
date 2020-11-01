@@ -18,8 +18,7 @@ export const LoadMore = connect(mapStateToProps)(
       dispatch( updateCurrent([...current, ...arr]) );
     }
   
-    if( step <= 0) return null;
-
+    if( step <= 0 || current.length === 0) return null;
     return (
       <button 
         className="button button--blue button--load-more"
