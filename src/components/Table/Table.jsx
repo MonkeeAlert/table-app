@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Empty } from '../Empty/Empty';
+import { getData } from '../../redux/actions';
 import { sortBy, getTranslation } from '../../utils/functions';
 
-const mapStateToProps = state => (
-  { 
-    current : [ ...state.current ],
-    view : state.view
-  }
-);
+const mapStateToProps = state => ({ 
+  current : [ ...state.current ],
+  view : state.view
+});
 
-export const Table = connect(mapStateToProps)(
+const mapDispatchToProps = dispatch => ({ fetchData : dispatch(getData()) });
+
+export const Table = connect(mapStateToProps, mapDispatchToProps)(
   ({ store }) => {
     const { view, language, current, filterBy, orderBy } = store.getState();
 

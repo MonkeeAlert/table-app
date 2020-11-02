@@ -1,6 +1,10 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { rootReducer } from './reducers';
 import { l18n } from '../utils/functions';
+import ReduxThunk from 'redux-thunk';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export const middlewares = [ ReduxThunk ];
 
 export const initialState = {
   data: [],
@@ -14,5 +18,5 @@ export const initialState = {
 export const store = createStore(
   rootReducer,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers( applyMiddleware( ...middlewares ) )
 ); 
